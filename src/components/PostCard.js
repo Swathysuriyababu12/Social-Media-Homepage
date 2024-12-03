@@ -54,9 +54,9 @@ const CommentsSection = ({ postId }) => {
 
 // PostCard Component
 const PostCard = ({ post, usernames }) => {
-  // const user = usernames.find((user) => user.id === post.userId) || {
-  //   name: "Anonymous",
-  // };
+  const user = usernames.find((user) => user.id === post.userId) || {
+    name: "Anonymous",
+  };
   const [showComments, setShowComments] = useState(false);
 
   const toggleComments = () => {
@@ -76,8 +76,8 @@ const PostCard = ({ post, usernames }) => {
       <div className="flex items-center mb-4">
         <Avatar userId={post.userId} />
         <div className="ml-4">
-          <h3 className="text-lg font-semibold text-gray-800">{"user.name"}</h3>
-          <p className="text-sm text-gray-500">Software Engineer</p>
+          <h3 className="text-lg font-semibold text-gray-800">{user.name}</h3>
+          <p className="text-sm text-gray-500">{user.profession}</p>
         </div>
       </div>
 
